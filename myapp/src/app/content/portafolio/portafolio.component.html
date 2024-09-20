@@ -1,0 +1,29 @@
+<p>1.- Mostrar un texto en pantalla</p>
+{{ texto }}
+
+<br />
+
+<p>2.- Combinaciones</p>
+{{ nombrecompleto }}
+
+<p>3.- Operaciones</p>
+{{ resultado }}
+
+<p>Calculo del promedio de 3 numeros</p>
+
+<form action="">
+  <label for="">Ingresa el numero 1</label>
+  <input type="number" name="n1" [(ngModel)]="n1" />
+  <br />
+  <label for="">Ingresa el numero 2</label>
+  <input type="number" name="n2" [(ngModel)]="n2" />
+  <br />
+  <label for="">Ingresa el numero 3</label>
+  <input type="number" name="n3" [(ngModel)]="n3" />
+  <br />
+  <button (click)="calcular()">Calcular</button>
+</form>
+
+{{ promedio }}
+
+
