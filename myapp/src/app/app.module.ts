@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { FormsModule } from '@angular/forms';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     InicioComponent,
     PortafolioComponent,
+    CalculatorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

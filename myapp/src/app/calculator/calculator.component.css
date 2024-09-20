@@ -1,0 +1,56 @@
+.btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: white;
+  font-size: 50px;
+  transition: background 0.2s ease, transform 0.2s ease, box 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.btn:hover {
+  transform: scale(103%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.normal {
+  border: 2px solid #66b6ab;
+  background-color: #abeee5;
+}
+.normal:hover {
+  background: linear-gradient(135deg, #abeee5, #66b6ab);
+}
+
+.variant-1 {
+  border: 2px solid #fffbb7;
+  background-color: #fdfcd3;
+}
+.variant-1:hover {
+  background: linear-gradient(135deg, #fdfcd3, #fffbb7);
+}
+
+.variant-2 {
+  border: 2px solid #a6f6af;
+  background-color: #ceecd2;
+}
+.variant-2:hover {
+  background: linear-gradient(135deg, #ceecd2, #a6f6af);
+}
+
+.zero {
+  border-radius: 60px;
+  width: 250px;
+}
+
+.div-table {
+  width: 550px;
+  border: 2px solid #4f2958;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: #a77db1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  width: 100%;
+}
