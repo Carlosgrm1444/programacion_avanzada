@@ -26,4 +26,129 @@
 
 {{ promedio }}
 
+<form action="">
+  <label for="">Cual es tu genero?</label>
+  <select type="text" name="genero" [(ngModel)]="genero" (change)="enviar()">
+    <option>Hombre</option>
+    <option>Mujer</option>
+  </select>
+</form>
+<br />
+<form action="">
+  <label for="">Cual es el precio del producto</label>
+  <input type="number" name="precio" [(ngModel)]="precio" />
+  <button (click)="calcularPrecio()">Calcular</button>
+</form>
+<br />
+<p>{{ textoResultado }}</p>
+<br />
+<h1>Adivina el numero secreto!!</h1>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[0]"
+  (click)="pushSecretNumber(0)"
+>
+  1
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[1]"
+  (click)="pushSecretNumber(1)"
+>
+  2
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[2]"
+  (click)="pushSecretNumber(2)"
+>
+  3
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[3]"
+  (click)="pushSecretNumber(3)"
+>
+  4
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[4]"
+  (click)="pushSecretNumber(4)"
+>
+  5
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[5]"
+  (click)="pushSecretNumber(5)"
+>
+  6
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[6]"
+  (click)="pushSecretNumber(6)"
+>
+  7
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[7]"
+  (click)="pushSecretNumber(7)"
+>
+  8
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[8]"
+  (click)="pushSecretNumber(8)"
+>
+  9
+</button>
+<button
+  class="btn m-2"
+  [ngClass]="buttonsState[9]"
+  (click)="pushSecretNumber(9)"
+>
+  10
+</button>
 
+<br />
+
+<p>5. Arreglos</p>
+<label>Ingresa 5 frutas, NO MAS!! </label><br />
+<input type="text" name="fruta" [(ngModel)]="fruta" />
+<button (click)="agregar()">Agregar</button>
+<div *ngFor="let f of frutas">
+  {{ f }}
+</div>
+
+<br />
+<br />
+<label>{{ ingresaNumeros }}</label
+><br />
+<input type="number" name="numeros" [(ngModel)]="newNumber" />
+<button (click)="agregarNumeros()">Agregar</button>
+<p>{{ textNumeroMayor }}</p>
+<br /><br />
+<div>
+  <label for="opciones">Selecciona una opción:</label>
+  <select id="opciones" (change)="seleccionarOpcion($event)">
+    <option *ngFor="let opcion of opcionesFrutas" [value]="opcion">
+      {{ opcion }}
+    </option>
+  </select>
+</div>
+Fruta seleccionada:
+<img
+  [src]="imagenUrl"
+  alt="{{ opcionSeleccionada }}"
+  style="width: 200px; height: auto"
+/>
+<br />
+Resto de frutas:
+<div *ngFor="let f of frutas2">
+  {{ f }}
+</div>
+<br />

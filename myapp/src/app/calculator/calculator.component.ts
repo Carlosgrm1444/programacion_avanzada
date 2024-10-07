@@ -13,7 +13,7 @@ export class CalculatorComponent {
 
   lastOperation: boolean = false;
   lastTotal: boolean = false;
-  oldOperation!: string;
+  oldOperation: string = '';
 
   operationsArray: string[] = ['%', '/', '*', '-', '+'];
 
@@ -23,8 +23,7 @@ export class CalculatorComponent {
       this.lastOperation = false;
     }
     if (this.lastTotal) {
-      this.textSmallDisplay = '';
-      this.lastTotal = false;
+      this.clearAll();
     }
     this.textBigDisplay += number;
   }
@@ -43,57 +42,47 @@ export class CalculatorComponent {
     this.textBigDisplay = '';
     this.textSmallDisplay = '';
     this.oldOperation = '';
+    this.lastOperation = false;
+    this.lastTotal = false;
+    this.result = 0;
   }
 
   total() {
-    this.lastTotal = true;
     this.textSmallDisplay += this.textBigDisplay + '=';
+    this.preCalculate();
+    this.textBigDisplay = this.result.toString();
+    this.lastTotal = true;
   }
-  plus() {
-    this.genericOperation('+');
-  }
-  rest() {
-    this.genericOperation('-');
-  }
-  multiply() {
-    this.genericOperation('*');
-  }
-  div() {
-    this.genericOperation('/');
-  }
-  mod() {}
 
   genericOperation(operation: string) {
-    this.lastOperation = true;
-    if (this.operationsArray.includes(this.textSmallDisplay.slice(-1))) {
-      this.textSmallDisplay = this.textSmallDisplay.slice(0, -1);
-      this.textSmallDisplay += operation;
+    if (this.oldOperation != '') {
+      this.preCalculate();
+      this.textSmallDisplay = this.result + operation;
+      console.log('d');
     } else {
-      this.textSmallDisplay += this.textBigDisplay + operation;
-      this.oldOperation = operation;
+      this.result = parseFloat(this.textBigDisplay);
+      this.textSmallDisplay = this.textBigDisplay + operation;
     }
+    this.lastOperation = true;
+    this.oldOperation = operation;
   }
 
-  calculate() {
-    if (this.operationsArray.includes(this.textSmallDisplay.slice(-1))) {
-      this.textSmallDisplay = this.textSmallDisplay.slice(0, -1);
-    }
+  preCalculate() {
     switch (this.oldOperation) {
       case '+':
-        // Código a ejecutar si expresión === valor1
+        this.result += parseFloat(this.textBigDisplay);
         break;
       case '-':
-        // Código a ejecutar si expresión === valor2
+        this.result -= parseFloat(this.textBigDisplay);
         break;
       case '*':
-        // Código a ejecutar si expresión === valor1
+        this.result *= parseFloat(this.textBigDisplay);
         break;
       case '/':
-        // Código a ejecutar si expresión === valor2
+        this.result /= parseFloat(this.textBigDisplay);
         break;
-      // Puedes agregar más casos según sea necesario
       default:
-      // Código a ejecutar si no coincide con ningún caso
+        console.log('error en la operacion');
     }
   }
 }

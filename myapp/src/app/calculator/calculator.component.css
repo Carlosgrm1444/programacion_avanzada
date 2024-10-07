@@ -14,7 +14,7 @@
 }
 
 .normal {
-  border: 2px solid #66b6ab;
+  border: 4px solid #66b6ab;
   background-color: #abeee5;
 }
 .normal:hover {
@@ -22,7 +22,7 @@
 }
 
 .variant-1 {
-  border: 2px solid #fffbb7;
+  border: 4px solid #fffbb7;
   background-color: #fdfcd3;
 }
 .variant-1:hover {
@@ -30,7 +30,7 @@
 }
 
 .variant-2 {
-  border: 2px solid #a6f6af;
+  border: 4px solid #a6f6af;
   background-color: #ceecd2;
 }
 .variant-2:hover {
@@ -44,7 +44,7 @@
 
 .div-table {
   width: 550px;
-  border: 2px solid #4f2958;
+  border: 4px solid #4f2958;
   border-radius: 50px;
   padding: 10px;
   background-color: #a77db1;

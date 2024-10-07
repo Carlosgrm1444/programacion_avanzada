@@ -1,11 +1,12 @@
 <div class="div-table m-auto mt-5">
+  <!-- <h1 class="text-center text-white">CGRM Calculator</h1> -->
   <table>
     <tr>
       <td colspan="4">
         <input
           type="text"
           class="form-control m-auto me-3 mt-3 mb-1"
-          style="font-size: 20px; width: 85%"
+          style="font-size: 20px; width: 85%; border-radius: 13px"
           id="smallDisplay"
           [(ngModel)]="textSmallDisplay"
           disabled
@@ -17,7 +18,7 @@
         <input
           type="text"
           class="form-control m-auto mb-3"
-          style="font-size: 50px; width: 94%"
+          style="font-size: 50px; width: 94%; border-radius: 20px"
           id="bigDisplay"
           [(ngModel)]="textBigDisplay"
           disabled
@@ -31,26 +32,26 @@
           <i class="bi bi-backspace"></i>
         </button>
       </td>
-      <td><button class="btn variant-1" (click)="mod()">%</button></td>
-      <td><button class="btn variant-2" (click)="div()">/</button></td>
+      <td><button class="btn variant-1" (click)="genericOperation('%')">%</button></td>
+      <td><button class="btn variant-2" (click)="genericOperation('/')">/</button></td>
     </tr>
     <tr>
       <td><button class="btn normal" (click)="pushNumber('7')">7</button></td>
       <td><button class="btn normal" (click)="pushNumber('8')">8</button></td>
       <td><button class="btn normal" (click)="pushNumber('9')">9</button></td>
-      <td><button class="btn variant-2" (click)="multiply()">*</button></td>
+      <td><button class="btn variant-2" (click)="genericOperation('*')">*</button></td>
     </tr>
     <tr>
       <td><button class="btn normal" (click)="pushNumber('4')">4</button></td>
       <td><button class="btn normal" (click)="pushNumber('5')">5</button></td>
       <td><button class="btn normal" (click)="pushNumber('6')">6</button></td>
-      <td><button class="btn variant-2" (click)="rest()">-</button></td>
+      <td><button class="btn variant-2" (click)="genericOperation('-')">-</button></td>
     </tr>
     <tr>
       <td><button class="btn normal" (click)="pushNumber('1')">1</button></td>
       <td><button class="btn normal" (click)="pushNumber('2')">2</button></td>
       <td><button class="btn normal" (click)="pushNumber('3')">3</button></td>
-      <td><button class="btn variant-2" (click)="plus()">+</button></td>
+      <td><button class="btn variant-2" (click)="genericOperation('+')">+</button></td>
     </tr>
     <tr>
       <td colspan="2">
