@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { FormsModule } from '@angular/forms';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { Examen2Component } from './content/examen2/examen2.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
     InicioComponent,
     PortafolioComponent,
     CalculatorComponent,
+    Examen2Component,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

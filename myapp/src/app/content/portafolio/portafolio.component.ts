@@ -211,7 +211,7 @@ export class PortafolioComponent {
 
   seleccionarOpcion(event: any) {
     this.opcionSeleccionada = event.target.value;
-    this.obtenerUrl()
+    this.obtenerUrl();
     console.log(this.opcionSeleccionada);
     this.agregarFrutas();
     event.target.value = 'Selecciona una opcion';
@@ -219,6 +219,12 @@ export class PortafolioComponent {
 
   agregarFrutas() {
     if (this.frutas2.length < 5) {
+      // ! para eliminar el elemento
+      const index = this.opcionesFrutas.indexOf(this.opcionSeleccionada);
+      if (index !== -1) {
+        this.opcionesFrutas.splice(index, 1);
+      }
+
       this.frutas2.push(this.opcionSeleccionada);
       console.log(this.frutas2);
       this.frutas2.sort();
